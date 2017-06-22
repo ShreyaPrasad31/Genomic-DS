@@ -25,7 +25,14 @@ collections.counter(genome)
   
 #phred--33
 #quality values for the reads 
+#each quality score is phred 33 encoded
 def QtoPhred33(Q): #conver to ASCII vaue 
   return chr(Q + 33) #Q must be rounded up to the nearest integer
 def Phred33toQ(qval)
 return ord(qval) - 33
+#download human sequencing reads 
+#!wget --no-check url(conf)
+def ReadFastQ(filename):
+  sequences = []
+  qualities = []
+
