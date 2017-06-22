@@ -51,5 +51,16 @@ def ReadFastQ(filename):
 
 #analyze the parsed data
 def createHist(qualities):
+  hist = [0]*50
+  for qual in qualities:
+    for phred in qual:
+      q = Phred33toQ(phred)
+      hist[q]+ = 1
+  return hist    
+
+import matplotlib.pyplot as plt
+plt.bar(range(len(h)) , h)
+plt.show()
+
   
 
