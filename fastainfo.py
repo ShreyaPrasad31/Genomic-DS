@@ -23,3 +23,9 @@ print(counts)
 import collections 
 collections.counter(genome)
   
+#phred--33
+#quality values for the reads 
+def QtoPhred33(Q): #conver to ASCII vaue 
+  return chr(Q + 33) #Q must be rounded up to the nearest integer
+def Phred33toQ(qval)
+return ord(qval) - 33
