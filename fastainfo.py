@@ -85,7 +85,23 @@ for seq in seqs:
   count.update(seq)
 print(count) #=> will have a value of N when the base caller sequencer has no confidence   
         
-        
+#reference based assembly of base snippets to an already known genome 
+#how many times the pattern P occurs in the text T
+
+
+#Naive Algorithm
+def naive(p,t):
+  occurences = []
+  for i in range(len(t) - len(p) + 1):
+    match = True
+    for j in range(len(p)):
+      if t[i+i]! = p[j]:
+        match = False # =/REJECT ALIGNMENT 
+        break
+      if match:
+        occurences.append(i)
+ return occurences   
+  
 
   
 
