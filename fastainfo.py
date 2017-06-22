@@ -100,7 +100,9 @@ def naive(p,t):
         break
       if match:
         occurences.append(i)
- return occurences   
+ return occurences 
+
+#x = |p| , y = |t| , worst case alignment will iterate x(y-x+1) times
   
 
   
