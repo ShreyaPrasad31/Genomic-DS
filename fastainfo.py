@@ -103,6 +103,12 @@ def naive(p,t):
  return occurences 
 
 #x = |p| , y = |t| , worst case alignment will iterate x(y-x+1) times
+#best case y-x+1 , one character comparison per alignment
+
+#Matching artificial reads
+!wget --no-check http://d28rg4awqoiu5.cloudfront.net/ads1/data/phix.fa
+genome = readGenome('phix.fa.1')
+
   
 
   
