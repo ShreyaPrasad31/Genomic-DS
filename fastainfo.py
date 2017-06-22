@@ -62,5 +62,30 @@ import matplotlib.pyplot as plt
 plt.bar(range(len(h)) , h)
 plt.show()
 
+#find the GC content
+def findGCbypos(reads):
+  gc = [0]*100
+  totals = [0]*100
+  for read in reads:
+    for i in range(len(reads)):
+      if read[i] == 'C' or read[i] =='G':
+        gc[i]+ = 1
+        totals[i]+ = 1
+    for i in range(len(gc)):
+      if totals[i] > 0:
+        gc[i]/ = float(totals[i])
+gc = findGCbypos(range(len(gc)) , gc)
+plot.show()
+#average GC content of the human genome is greater than 1/2 usually
+
+#counts of different bases in the sequence
+import collections
+count = collections.Counter()
+for seq in seqs:
+  count.update(seq)
+print(count) #=> will have a value of N when the base caller sequencer has no confidence   
+        
+        
+
   
 
