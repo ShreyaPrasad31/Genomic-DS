@@ -32,7 +32,24 @@ def Phred33toQ(qval)
 return ord(qval) - 33
 #download human sequencing reads 
 #!wget --no-check url(conf)
+
+#parse the dataset, two seperate lists, one for next generation seq, other for the qaulity scores of the bases 
 def ReadFastQ(filename):
   sequences = []
   qualities = []
+  with open (filename) as fh:
+    while True:
+      fh.readline()
+      seq = fh.readline().rstrip()
+      fh.readline
+      qual = fh.readline().rstrip()
+      if len(seq) == 0 :
+        break
+      sequences.append(seq)
+      qualities.append(qual)
+ return qualities, sequences   
+
+#analyze the parsed data
+def createHist(qualities):
+  
 
