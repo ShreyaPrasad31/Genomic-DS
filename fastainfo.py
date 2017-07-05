@@ -1,4 +1,4 @@
-
+ 
 #input files need to be in the fasta format containing raw reads 
 
 #ignore first line => info about organism 
@@ -7,7 +7,7 @@ def readGenome(filename):
   genome = ' '
   with open(filename , 'r') as f:
     for line in f:
-      if not line[0] == '>':
+      if not line[0] == '>': #ignore the first line of the fasta file, which contains information about the machine 
         genome+ = line.rstrip()
     return genome 
   
@@ -34,6 +34,7 @@ return ord(qval) - 33
 #!wget --no-check url(conf)
 
 #parse the dataset, two seperate lists, one for next generation seq, other for the qaulity scores of the bases 
+#the quality score(Phred 33 encoded ) of the nucleotide lies directly below the sequence of raw reads 
 def ReadFastQ(filename):
   sequences = []
   qualities = []
