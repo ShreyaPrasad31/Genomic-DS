@@ -46,7 +46,8 @@ def ReadFastQ(filename):
       qual = fh.readline().rstrip()
       if len(seq) == 0 :
         break
-      sequences.append(seq)
+
+        sequences.append(seq)
       qualities.append(qual)
  return qualities, sequences   
 
