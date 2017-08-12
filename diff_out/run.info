@@ -1,0 +1,5 @@
+param	value
+cmd_line	cuffdiff -o cuffdiff -p 25 /data2/trainee/Horse_data/cuffmerge/merged.gtf /data2/trainee/Horse_data/Sample_1/tophat_output/accepted_hits.bam /data2/trainee/Horse_data/Sample_2/tophat_output/accepted_hits.bam /data2/trainee/Horse_data/Sample_3/tophat_output/accepted_hits.bam 
+version	2.2.1
+SVN_revision	4237
+boost_version	104700

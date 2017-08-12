@@ -1,0 +1,4 @@
+file	condition	replicate_num	total_mass	norm_mass	internal_scale	external_scale
+/data2/trainee/Horse_data/Sample_1/tophat_output/accepted_hits.bam	q1	0	6.80446e+06	5.66379e+06	1.135	1
+/data2/trainee/Horse_data/Sample_2/tophat_output/accepted_hits.bam	q2	0	7.27454e+06	5.66379e+06	1.34056	1
+/data2/trainee/Horse_data/Sample_3/tophat_output/accepted_hits.bam	q3	0	3.72368e+06	5.66379e+06	0.668192	1
