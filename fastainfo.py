@@ -1,5 +1,4 @@
  
-#input files need to be in the fasta format containing raw reads 
 
 #ignore first line => info about organism 
 #read in the base pairs 
@@ -11,7 +10,15 @@ def readGenome(filename):
         genome+ = line.rstrip()
     return genome 
   
-genome = readGenome('lambds_virus.fa')  
+genome = readGenome('Sup35.fa') 
+
+##or for using the functions on any random sequence 
+import random
+random.choice('ACGT')
+seq = ''
+for _ in range(10):#or any desired length 
+    seq += random.choice('ATGC')
+print(seq)  
 
 #count the frequency of each base
 counts = {'A' : 0 , 'C' : 0 , 'G' :0 , 'T' : 0}
@@ -19,9 +26,6 @@ for base in genome:
   counts[base]+ = 1
 print(counts)
 
-##################################or#####################
-import collections 
-collections.counter(genome)
   
 #phred--33
 #quality values for the reads 
@@ -30,7 +34,7 @@ def QtoPhred33(Q): #conver to ASCII vaue
   return chr(Q + 33) #Q must be rounded up to the nearest integer
 def Phred33toQ(qval)
 return ord(qval) - 33
-#download human sequencing reads 
+#download the Sup35 sequencing reads 
 #!wget --no-check url(conf)
 
 #parse the dataset, two seperate lists, one for next generation seq, other for the qaulity scores of the bases 
@@ -78,7 +82,7 @@ def findGCbypos(reads):
         gc[i]/ = float(totals[i])
 gc = findGCbypos(range(len(gc)) , gc)
 plot.show()
-#average GC content of the human genome is greater than 1/2 usually
+
 
 #counts of different bases in the sequence
 import collections
@@ -90,7 +94,9 @@ print(count) #=> will have a value of N when the base caller sequencer has no co
 #reference based assembly of base snippets to an already known genome 
 #how many times the pattern P occurs in the text T
 
-
+#if we can get the sequence of sup35 aggregated with any other protien (?) ,we can analyze how its original 
+#sequence differs from the sequence after aggregation
+#p-> original sup35 seq and t-> aggregated sequence 
 #Naive Algorithm
 def naive(p,t):
   occurences = []
@@ -107,9 +113,6 @@ def naive(p,t):
 #x = |p| , y = |t| , worst case alignment will iterate x(y-x+1) times
 #best case y-x+1 , one character comparison per alignment
 
-#Matching artificial reads
-!wget --no-check http://d28rg4awqoiu5.cloudfront.net/ads1/data/phix.fa
-genome = readGenome('phix.fa.1')
 
   
 
