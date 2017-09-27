@@ -1,1 +1,0 @@
-Next-Generation sequencing machines usually produce FASTA or FASTQ files, containing multiple short-reads sequences. This program manipulates and analyses the frequency of occurence and outputs chart quality statistics and distribution of nucleotides and also produces the reverse complements of sequence reads. Cannot work on reads with more than 1000bp
